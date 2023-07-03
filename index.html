@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple 360 View</title>
+</head>
+<body>
+        <button
+    id="apple360Spin"
+    aria-label="Show 3D view for iphone"
+    data-textures-path="assets/textures/"
+    data-models-path="assets/models/"
+    data-svg-path="assets/example/rotate.svg"
+    >
+    Open 3D Modal
+    </button>
+
+    <script src="scripts/apple360spin.js" defer></script>
+    <script>
+    // Create an instance
+    const init3D = new CustomEvent('channel-html:3djs:init');
+    window.addEventListener('DOMContentLoaded', () => {
+        window.dispatchEvent(init3D);
+    });
+    window.addEventListener('3dpv:event', (event) => {
+        console.log('e', event.detail);
+        }
+    )
+        
+    
+</script>
+</body>\
+</html>
