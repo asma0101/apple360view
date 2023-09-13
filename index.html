@@ -22,31 +22,36 @@
         Open 3D Modal
     </button>
 
-    <!-- <script src="scripts/apple360spin.js" defer></script> -->
+    <button onclick="redirectUaePass()">Test Button</button>
+
+    <script src="scripts/apple360spin.js" defer></script>
 
     <script>
-        $(document).ready(function(){
-            console.log("Button is present ==> ", $('#apple360Spin'))
-            loadDynamicScript()
-        })
-        const init3D = new CustomEvent('channel-html:3djs:init');
-        window.addEventListener('DOMContentLoaded', () => {
-            window.dispatchEvent(init3D);
-            console.log(init3D);
-        });
-        window.addEventListener('3dpv:event', (event) => {
-            console.log('e', event.detail);
-            }
-        )
-        function loadDynamicScript(){
-            console.log("loading script initiated---------")
-            var script = document.createElement('script');
-            script.setAttribute('src', 'scripts/apple360spin.js');
-            script.setAttribute('async', false);
-            script.setAttribute('defer', true)
-            document.head.appendChild(script);
-            console.log("loading script finished---------")
+        function redirectUaePass() {
+            window.href='uaepass://';
         }
+        // $(document).ready(function(){
+        //     console.log("Button is present ==> ", $('#apple360Spin'))
+        //     loadDynamicScript()
+        // })
+        // const init3D = new CustomEvent('channel-html:3djs:init');
+        // window.addEventListener('DOMContentLoaded', () => {
+        //     window.dispatchEvent(init3D);
+        //     console.log(init3D);
+        // });
+        // window.addEventListener('3dpv:event', (event) => {
+        //     console.log('e', event.detail);
+        //     }
+        // )
+        // function loadDynamicScript(){
+        //     console.log("loading script initiated---------")
+        //     var script = document.createElement('script');
+        //     script.setAttribute('src', 'scripts/apple360spin.js');
+        //     script.setAttribute('async', false);
+        //     script.setAttribute('defer', true)
+        //     document.head.appendChild(script);
+        //     console.log("loading script finished---------")
+        // }
     </script>
 </body>
 </html>
